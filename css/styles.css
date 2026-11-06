@@ -269,6 +269,49 @@ button:focus-visible {
 }
 .pp-nav-cta:hover { background: var(--pp-orange-dark); transform: translateY(-1px); }
 
+/* —— Site-wide offer banner (between header and main) —— */
+.pp-offer-banner {
+  background: linear-gradient(90deg, var(--pp-navy) 0%, var(--pp-navy-panel) 55%, #1f3a54 100%);
+  color: #fff;
+  border-bottom: 3px solid var(--pp-orange);
+  padding: 10px 0;
+}
+.pp-offer-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.pp-offer-banner-tag {
+  display: inline-block;
+  background: var(--pp-orange);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+.pp-offer-banner-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--pp-cream);
+}
+.pp-offer-banner-text strong {
+  color: #fff;
+  font-weight: 700;
+}
+@media (max-width: 560px) {
+  .pp-offer-banner { padding: 12px 0; }
+  .pp-offer-banner-text { font-size: 0.88rem; }
+}
+
+
 /* Hamburger */
 .pp-hamburger {
   display: none;
