@@ -1242,3 +1242,21 @@ button:focus-visible {
   .pp-contact-card { padding: 28px 22px; }
   .pp-form-row { grid-template-columns: 1fr; }
 }
+
+/* ── Gallery, team, reviews additions (Nov 2026) ── */
+.pp-testimonials-foot { text-align: center; margin-top: 36px; color: var(--pp-gray); font-weight: 600; }
+.pp-gallery { background: var(--pp-cream); }
+.pp-gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+.pp-gallery-item { margin: 0; background: var(--pp-white); border-radius: var(--pp-radius-lg); overflow: hidden; box-shadow: var(--pp-shadow-sm); }
+.pp-gallery-item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.pp-gallery-item figcaption { padding: 14px 18px; font-weight: 600; color: var(--pp-ink); display: flex; flex-direction: column; gap: 4px; }
+.pp-gallery-tag { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--pp-orange); }
+.pp-team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+.pp-team-card { background: var(--pp-white); border: 1px solid var(--pp-border); border-radius: var(--pp-radius-lg); overflow: hidden; box-shadow: var(--pp-shadow-sm); }
+.pp-team-card img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: var(--pp-navy-panel); }
+.pp-team-card-body { padding: 24px; }
+.pp-team-card h2 { font-size: 22px; color: var(--pp-navy); margin: 0 0 4px; }
+.pp-team-role { display: block; color: var(--pp-orange); font-weight: 700; margin-bottom: 12px; }
+.pp-team-card p { color: var(--pp-slate); line-height: 1.6; }
+.pp-team-links a { color: var(--pp-orange); font-weight: 600; text-decoration: none; }
+.pp-team-links a:hover { color: var(--pp-orange-dark); text-decoration: underline; }
