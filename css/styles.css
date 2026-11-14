@@ -929,6 +929,8 @@ button:focus-visible {
 .pp-proj-card-badge { position: absolute; top: 14px; left: 14px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 5px 12px; border-radius: 50px; }
 .pp-proj-card-badge--contractor { background: var(--pp-navy); color: #fff; }
 .pp-proj-card-badge--residential { background: var(--pp-orange); color: #fff; }
+.pp-proj-card-badge--plastering { background: #6b4f3a; color: #fff; }
+.pp-proj-card-img img.pp-pos-upper { object-position: center 28%; }
 .pp-proj-card-badge--before-after { background: var(--pp-cream); color: var(--pp-navy); border: 1px solid rgba(15,30,46,0.12); }
 .pp-proj-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
 .pp-proj-card-location { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--pp-orange); margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
