@@ -19,6 +19,10 @@
     initActiveNav();
     initFaq();
     initFilters('.pp-proj-filter-btn', '.pp-proj-card', 'category');
+    if (window.location.hash === '#gallery' || window.location.hash === '#before-after') {
+      var ba = document.querySelector('.pp-proj-filter-btn[data-filter="before-after"]');
+      if (ba) ba.click();
+    }
     initCaseStudyFilters();
     initFooterYear();
     initContactForm();
@@ -147,8 +151,13 @@
 
   /* ---- Contact form validation ------------------------------------------ */
   function initContactForm() {
-    var form = document.getElementById('pp-contact-form');
-    if (!form) return;
+    var forms = document.querySelectorAll('#pp-contact-form, form[data-mailto]');
+    forms.forEach(initOneMailtoForm);
+  }
+
+  function initOneMailtoForm(form) {
+    if (!form || form.getAttribute('data-mailto-bound') === '1') return;
+    form.setAttribute('data-mailto-bound', '1');
 
     var status = form.querySelector('.pp-form-status');
 
@@ -178,20 +187,27 @@
         return;
       }
 
-      // No backend is wired up yet. If the form has no real action,
-      // show a friendly confirmation instead of navigating away.
-      var action = form.getAttribute('action') || '';
-      if (!action || action === '#') {
-        e.preventDefault();
-        if (status) {
-          status.className = 'pp-form-status success';
-          status.textContent = 'Thanks — your enquiry is ready to send. ' +
-            'Connect a form service (see README) to receive it by email, or ' +
-            'call 07572 661205 in the meantime.';
-        }
-        form.reset();
+      // Open the visitor's email client so the enquiry reaches sales@
+      // without a WordPress or third-party form backend.
+      e.preventDefault();
+      var to = form.getAttribute('data-mailto') || 'sales@pinderspainters.co.uk';
+      var subject = form.getAttribute('data-subject') || 'Website enquiry';
+      var lines = [];
+      form.querySelectorAll('input, select, textarea').forEach(function (field) {
+        if (!field.name || field.type === 'submit') return;
+        var value = (field.value || '').trim();
+        if (!value) return;
+        var label = field.name.replace(/[_-]/g, ' ');
+        lines.push(label + ': ' + value);
+      });
+      var href = 'mailto:' + to
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(lines.join('\n'));
+      if (status) {
+        status.className = 'pp-form-status success';
+        status.textContent = 'Your email app should open with the enquiry ready to send to ' + to + '. If it does not, please email us directly.';
       }
-      // If a real action IS set (e.g. Formspree), let the browser submit normally.
+      window.location.href = href;
     });
 
     // Clear the invalid state as the user corrects a field

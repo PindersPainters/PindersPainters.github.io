@@ -16,11 +16,16 @@ PindersPainters.github.io/
 ├── index.html                              # Homepage
 ├── contractor-services.html                # Contractor labour supply
 ├── residential-services.html               # Residential painting (+ FAQ accordion)
+├── offers.html                             # Set room prices and current offers
 ├── projects.html                           # Portfolio (+ filter buttons)
 ├── blog.html                               # Blog listing
-├── why-work-with-us.html                   # Why choose us
-├── contact.html                            # Contact + enquiry form
-├── blog-winter-painting-tips-cornwall.html # Blog post 1
+├── why-work-with-us.html                   # Why work with us
+├── team.html                               # Meet the Team
+├── contact.html                            # Contact + mailto enquiry forms
+├── recruitment-page.html                   # Recruitment
+├── privacy-policy.html                     # Privacy policy
+├── blog-preparing-your-cornwall-home-for-winter-painting.html
+├── blog-winter-painting-tips-cornwall.html
 ├── blog-exterior-painting-guide-cornwall.html
 ├── blog-spring-decorating-cornwall.html
 ├── blog-interior-window-frames-cornwall.html
@@ -28,7 +33,7 @@ PindersPainters.github.io/
 │   └── styles.css                          # All styles + design tokens (:root variables)
 ├── js/
 │   └── scripts.js                          # Nav, FAQ, filters, form validation
-├── images/                                 # (Placeholder for future local images)
+├── images/uploads/                         # Vendored former WordPress media
 ├── favicon.svg                             # Site icon
 ├── CNAME                                   # Custom domain for GitHub Pages
 ├── robots.txt
@@ -36,10 +41,9 @@ PindersPainters.github.io/
 └── README.md
 ```
 
-> **Images:** Photos currently load from the existing WordPress media library
-> (`https://pinderspainters.co.uk/wp-content/uploads/…`), so they display immediately.
-> To make the site fully self-contained, download those images into `images/` and update
-> the `src` / `og:image` paths to `images/…`.
+> **Images:** Files previously loaded from `pinderspainters.co.uk/wp-content/uploads/`
+> are stored under `images/uploads/` so the fallback site still works if WordPress is down.
+> Project before-and-after photos continue to load from Cloudinary.
 
 ---
 
@@ -168,3 +172,13 @@ So that `pinderspainters.co.uk` (without `www`) also works and redirects to `www
   mobile menu and FAQ, `alt` text on all images, decorative icons marked `aria-hidden`.
 - Per-page `<title>`, meta description, keywords, canonical URL, and Open Graph tags.
 - `HousePainter` structured data on the homepage, plus `sitemap.xml` and `robots.txt`.
+
+## Catch-up mirror (14 November 2026)
+
+This static copy is kept in line with the live WordPress site at https://pinderspainters.co.uk so it can be used as a fallback host.
+
+- Shared header, offer banner and footer match the live wording and navigation (including Offers and Recruitment). Contact is last in the nav; there is no Gallery item and no click-to-call button.
+- Enquiries go to **sales@pinderspainters.co.uk**. Contact and recruitment forms open the visitor's email app (`mailto:`) so they work without WordPress.
+- Homepage reviews are static cards of the current Google reviews, with a link to the public Google reviews page. They are not a live Trustindex widget.
+- Blog listing and homepage tiles are baked into the HTML (no `/wp-json` dependency).
+- Images previously loaded from `pinderspainters.co.uk/wp-content/uploads` now live under `images/uploads/`.
