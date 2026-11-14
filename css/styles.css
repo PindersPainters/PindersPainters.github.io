@@ -1443,3 +1443,121 @@ a.pp-team-photo:hover img {
 .pp-post-hero-image img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
 .pp-prose form { margin-top: 20px; }
 .pp-contact-body { padding: 48px 0 80px; background: var(--pp-cream); }
+
+
+
+/* Pinders Plasterers */
+.pp-prose-hero--photo {
+  position: relative;
+  background-color: var(--pp-navy);
+  background-image:
+    linear-gradient(90deg, rgba(15,30,46,0.88) 0%, rgba(15,30,46,0.72) 48%, rgba(15,30,46,0.55) 100%),
+    url('../images/uploads/2026/11/plastering-p166.jpg');
+  background-size: cover;
+  background-position: center 42%;
+  padding: 72px 0 64px;
+}
+.pp-prose-hero--photo .pp-wrap { position: relative; z-index: 1; }
+
+.pp-plasterers-mid {
+  background: var(--pp-orange);
+  color: #fff;
+  padding: 56px 0;
+  position: relative;
+  overflow: hidden;
+}
+.pp-plasterers-mid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 70%);
+}
+.pp-plasterers-mid-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.pp-plasterers-mid-inner,
+.pp-plasterers-mid-copy { position: relative; z-index: 1; }
+.pp-plasterers-mid-copy {
+  flex: 1 1 420px;
+  max-width: 720px;
+}
+.pp-plasterers-mid-copy .pp-h2 { margin: 6px 0 10px; }
+.pp-plasterers-mid-copy p {
+  margin: 0;
+  color: rgba(255,255,255,0.92);
+  font-size: 1.02rem;
+  line-height: 1.6;
+  max-width: 640px;
+}
+.pp-plasterers-mid-copy strong { color: #fff; }
+.pp-plasterers-mid .pp-btn--white {
+  flex-shrink: 0;
+  border-radius: 999px;
+  font-weight: 700;
+}
+@media (max-width: 700px) {
+  .pp-plasterers-mid { text-align: left; padding: 40px 0; }
+  .pp-plasterers-mid .pp-btn--white { width: 100%; text-align: center; }
+}
+
+.pp-discount-box {
+  background: var(--pp-cream);
+  border-left: 4px solid var(--pp-orange);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 22px;
+  margin: 28px 0;
+}
+.pp-discount-box h2 { margin-top: 0; }
+
+.pp-plaster-ba {
+  margin: 20px 0 8px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--pp-shadow-sm);
+}
+.pp-plaster-ba img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.pp-plaster-ba figcaption {
+  padding: 12px 16px 14px;
+  font-size: 0.95rem;
+  color: var(--pp-slate);
+}
+
+.pp-plaster-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin: 20px 0 8px;
+}
+@media (max-width: 640px) {
+  .pp-plaster-gallery { grid-template-columns: 1fr; }
+}
+.pp-plaster-gallery figure {
+  margin: 0;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--pp-shadow-sm);
+}
+.pp-plaster-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.pp-plaster-gallery img.pp-pos-upper { object-position: center 28%; }
+.pp-plaster-gallery figcaption {
+  padding: 12px 14px 14px;
+  font-size: 0.9rem;
+  color: var(--pp-slate);
+  line-height: 1.45;
+}
